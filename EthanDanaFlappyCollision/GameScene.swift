@@ -11,29 +11,32 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    var ground = SKSpriteNode()
+    
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
     override func didMove(to view: SKView) {
-        
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        createGround()
+    }
+    func createGround() {
+        for i in 0...3 {
+            let ground = SKSpriteNode(imageNamed: "ground")
+            ground.name = "Ground"
+            ground.size = CGSize(width: (self.scene?.size.width)!, height: 250)
+            ground.anchorPoint = CGPoint(x:  0.5, y: 0.5)
+            ground.position = CGPoint(x: CGFloat(i) * ground.size.width, y: -(self.frame.size.height / 2))
+            self.addChild(ground)
         }
-        
-        // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
-        
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
+    }
+    func moveGrounds(){
+        self.enumerateChildNodes(withName: "Ground") { (node, error) in
+            node.position.x -= 4
             
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
+            if node.position.x < -((self.scene?.size.width)!) {
+                node.position.x += (self.scene?.size.width)! * 3
+            }
         }
     }
     
@@ -84,6 +87,6 @@ class GameScene: SKScene {
     
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+        moveGrounds()
     }
 }
