@@ -13,7 +13,10 @@ class GameScene: SKScene {
     
     var ground = SKSpriteNode()
     var background = SKSpriteNode()
-    
+    var trash1 = SKSpriteNode()
+    var trash2 = SKSpriteNode()
+    var trash3 = SKSpriteNode()
+    var trashArray: [SKSpriteNode] = []
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
@@ -27,13 +30,24 @@ class GameScene: SKScene {
         for i in 0...3 {
             let background = SKSpriteNode(imageNamed: "background_static")
             background.name = "Background"
-            ground.size = CGSize(width: (self.scene?.size.width)!, height:250)
-            ground.anchorPoint = CGPoint(x: 0.6, y: 0.6)
-            ground.position = CGPoint (x: CGFloat(i) * ground.size.width, y: -(self.frame.size.height / 2))
+            background.size = CGSize(width: (self.scene?.size.width)!, height:250)
+            background.anchorPoint = CGPoint(x: 0.6, y: 0.6)
+            background.position = CGPoint (x: CGFloat(i) * background.size.width, y: -(self.frame.size.height / 2))
             self.addChild(background)
         }
     }
-
+    
+    func createTrash1(){
+        for i in 0...3 {
+            let trash1 = SKSpriteNode(imageNamed: "trash1")
+            trash1.name = "trash1"
+            trash1.size = CGSize(width: (self.scene?.size.width)!, height:250)
+            trash1.anchorPoint = CGPoint(x: 1, y: 1)
+            trash1.position = CGPoint (x: CGFloat(i) * trash1.size.width, y: -(self.frame.size.height / 2))
+            self.addChild(trash1)
+        }
+    }
+    
     
     func createGround() {
         for i in 0...3 {
@@ -54,8 +68,21 @@ class GameScene: SKScene {
             }
         }
     }
-
-    
+    /*
+    func moveTrash(arr: []) {
+        for i in arr {
+            self.enumerateChildNodes(withName: <#T##String#>, using: <#T##(SKNode, UnsafeMutablePointer<ObjCBool>) -> Void#>)
+        }
+    }
+     */
+    func randomSprite() -> SKSpriteNode {
+        let array = [
+            SKSpriteNode(imageNamed: "trash1"),
+            SKSpriteNode(imageNamed: "trash2"),
+            SKSpriteNode(imageNamed: "trash3"),
+        ]
+        return array[Int(arc4random_uniform(UInt32(array.count)))]
+    }
     
     func touchDown(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
@@ -64,6 +91,7 @@ class GameScene: SKScene {
             self.addChild(n)
         }
     }
+    
     
     func touchMoved(toPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
