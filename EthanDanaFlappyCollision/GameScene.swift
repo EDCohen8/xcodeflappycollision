@@ -12,20 +12,35 @@ import GameplayKit
 class GameScene: SKScene {
     
     var ground = SKSpriteNode()
+    var background = SKSpriteNode()
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
     override func didMove(to view: SKView) {
-        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        self.anchorPoint = CGPoint(x: 0.6, y: 0.6)
         createGround()
+        createBackground()
     }
+    
+    func createBackground() {
+        for i in 0...3 {
+            let background = SKSpriteNode(imageNamed: "background_static")
+            background.name = "Background"
+            ground.size = CGSize(width: (self.scene?.size.width)!, height:250)
+            ground.anchorPoint = CGPoint(x: 0.6, y: 0.6)
+            ground.position = CGPoint (x: CGFloat(i) * ground.size.width, y: -(self.frame.size.height / 2))
+            self.addChild(background)
+        }
+    }
+
+    
     func createGround() {
         for i in 0...3 {
             let ground = SKSpriteNode(imageNamed: "ground")
             ground.name = "Ground"
             ground.size = CGSize(width: (self.scene?.size.width)!, height: 250)
-            ground.anchorPoint = CGPoint(x:  0.5, y: 0.5)
+            ground.anchorPoint = CGPoint(x:  0.6, y: 0.6)
             ground.position = CGPoint(x: CGFloat(i) * ground.size.width, y: -(self.frame.size.height / 2))
             self.addChild(ground)
         }
@@ -39,6 +54,7 @@ class GameScene: SKScene {
             }
         }
     }
+
     
     
     func touchDown(atPoint pos : CGPoint) {
