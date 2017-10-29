@@ -34,9 +34,9 @@ class GameplayScene: SKScene {
         background2 = childNode(withName: "background2") as? BGClass!;
         background3 = childNode(withName: "background3") as? BGClass!;
         
-        sand1 = childNode(withName: "sand1") as? GroundClass!;
-        sand2 = childNode(withName: "sand2") as? GroundClass!;
-        sand3 = childNode(withName: "sand3") as? GroundClass!;
+        sand1 = childNode(withName: "sand1") as? GroundClass;
+        sand2 = childNode(withName: "sand2") as? GroundClass;
+        sand3 = childNode(withName: "sand3") as? GroundClass;
     }
     private func manageCamera() {
         self.mainCamera?.position.x += 10;
