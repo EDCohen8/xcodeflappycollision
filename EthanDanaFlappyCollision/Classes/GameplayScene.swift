@@ -39,7 +39,7 @@ class GameplayScene: SKScene {
         sand3 = childNode(withName: "sand3") as? GroundClass;
     }
     private func manageCamera() {
-        self.mainCamera?.position.x += 10;
+        self.mainCamera?.position.x += 7;
     }
     
     private func manageBGsAndGrounds(){
