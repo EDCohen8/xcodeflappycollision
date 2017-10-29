@@ -17,6 +17,7 @@
 		B06A92011FA5150500901686 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A91FF1FA5150500901686 /* LaunchScreen.storyboard */; };
 		B06A920C1FA5150500901686 /* EthanDanaFlappyCollisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A920B1FA5150500901686 /* EthanDanaFlappyCollisionTests.swift */; };
 		B06A92171FA5150500901686 /* EthanDanaFlappyCollisionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A92161FA5150500901686 /* EthanDanaFlappyCollisionUITests.swift */; };
+		B0AB66631FA592DF00D70ED4 /* GroundClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB66621FA592DF00D70ED4 /* GroundClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		B06A92121FA5150500901686 /* EthanDanaFlappyCollisionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EthanDanaFlappyCollisionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A92161FA5150500901686 /* EthanDanaFlappyCollisionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthanDanaFlappyCollisionUITests.swift; sourceTree = "<group>"; };
 		B06A92181FA5150500901686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0AB66621FA592DF00D70ED4 /* GroundClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				8C80AC361FA58B7200319D7B /* BGClass.swift */,
+				B0AB66621FA592DF00D70ED4 /* GroundClass.swift */,
 			);
 			path = "BG and Ground Classes";
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				B06A91F91FA5150500901686 /* GameViewController.swift in Sources */,
 				8C80AC341FA5878700319D7B /* GameplayScene.swift in Sources */,
 				B06A91F11FA5150500901686 /* AppDelegate.swift in Sources */,
+				B0AB66631FA592DF00D70ED4 /* GroundClass.swift in Sources */,
 				8C80AC371FA58B7200319D7B /* BGClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
