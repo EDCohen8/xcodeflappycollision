@@ -18,6 +18,7 @@
 		B06A920C1FA5150500901686 /* EthanDanaFlappyCollisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A920B1FA5150500901686 /* EthanDanaFlappyCollisionTests.swift */; };
 		B06A92171FA5150500901686 /* EthanDanaFlappyCollisionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A92161FA5150500901686 /* EthanDanaFlappyCollisionUITests.swift */; };
 		B0AB66631FA592DF00D70ED4 /* GroundClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB66621FA592DF00D70ED4 /* GroundClass.swift */; };
+		B0AB66661FA59A4800D70ED4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB66651FA59A4800D70ED4 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B06A92161FA5150500901686 /* EthanDanaFlappyCollisionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthanDanaFlappyCollisionUITests.swift; sourceTree = "<group>"; };
 		B06A92181FA5150500901686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0AB66621FA592DF00D70ED4 /* GroundClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundClass.swift; sourceTree = "<group>"; };
+		B0AB66651FA59A4800D70ED4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		B06A91EF1FA5150500901686 /* EthanDanaFlappyCollision */ = {
 			isa = PBXGroup;
 			children = (
+				B0AB66641FA598DE00D70ED4 /* Player Class */,
 				8C80AC351FA58B4D00319D7B /* BG and Ground Classes */,
 				8C80AC321FA5876900319D7B /* Classes */,
 				B06A91F01FA5150500901686 /* AppDelegate.swift */,
@@ -151,6 +154,14 @@
 				B06A92181FA5150500901686 /* Info.plist */,
 			);
 			path = EthanDanaFlappyCollisionUITests;
+			sourceTree = "<group>";
+		};
+		B0AB66641FA598DE00D70ED4 /* Player Class */ = {
+			isa = PBXGroup;
+			children = (
+				B0AB66651FA59A4800D70ED4 /* Player.swift */,
+			);
+			path = "Player Class";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +303,7 @@
 				8C80AC341FA5878700319D7B /* GameplayScene.swift in Sources */,
 				B06A91F11FA5150500901686 /* AppDelegate.swift in Sources */,
 				B0AB66631FA592DF00D70ED4 /* GroundClass.swift in Sources */,
+				B0AB66661FA59A4800D70ED4 /* Player.swift in Sources */,
 				8C80AC371FA58B7200319D7B /* BGClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R7B2XY9QQT;
 				INFOPLIST_FILE = EthanDanaFlappyCollision/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ethancohen.EthanDanaFlappyCollision;
@@ -473,6 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R7B2XY9QQT;
 				INFOPLIST_FILE = EthanDanaFlappyCollision/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ethancohen.EthanDanaFlappyCollision;

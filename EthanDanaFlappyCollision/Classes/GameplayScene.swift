@@ -18,14 +18,16 @@ class GameplayScene: SKScene {
     private var sand2: GroundClass?;
     private var sand3: GroundClass?;
     
+    private var player: Player?;
+    
     private var mainCamera: SKCameraNode?;
     
     override func didMove(to view: SKView) {
         initializeGame()
     }
     override func update(_ currentTime: TimeInterval) {
-        manageCamera();
-        manageBGsAndGrounds();
+       // manageCamera();
+        //manageBGsAndGrounds();
     }
     private func initializeGame() {
         mainCamera = childNode(withName: "mainCamera") as? SKCameraNode!;
@@ -37,6 +39,10 @@ class GameplayScene: SKScene {
         sand1 = childNode(withName: "sand1") as? GroundClass;
         sand2 = childNode(withName: "sand2") as? GroundClass;
         sand3 = childNode(withName: "sand3") as? GroundClass;
+        
+        player = childNode(withName: "Player") as? Player;
+        player?.initializePlayer();
+
     }
     private func manageCamera() {
         self.mainCamera?.position.x += 7;
